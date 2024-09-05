@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript basics</title>
+</head>
+
+<body>
+    <h1>Javascript basics</h1>
+    <ul>
+        <li>Spring</li>
+        <li>Summer</li>
+        <li>Fall</li>
+        <li>Winter</li>
+    </ul>
+    <script>
+       //const iterable = [1,2,3,4,5]
+       const iterable = new Set([1,2,3,5,4,5])
+       const iterable2 = new Map([["name", "jon"], ["age", 6]])
+       //We acces the iterator
+       const iterator = iterable[Symbol.iterator]()
+
+       console.log(iterable)
+       console.log(iterator)
+       //value, is there another element?
+       /*
+       console.log(iterator.next())
+       console.log(iterator.next())
+       console.log(iterator.next())
+       console.log(iterator.next())
+       console.log(iterator.next())
+       console.log(iterator.next())
+       */ 
+
+       let next = iterator.next()
+       while (!next.done) {
+        console.log(next.value)
+        next = iterator.next()
+       }
+
+
+    </script>
+</body>
+
+</html>
